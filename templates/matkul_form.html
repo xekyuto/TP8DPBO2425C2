@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- Menentukan bahasa dokumen HTML adalah Bahasa Indonesia -->
+<html lang="id">
+<head>
+  <!-- Mengatur encoding karakter halaman menjadi UTF-8 -->
+  <meta charset="utf-8">
+  <!-- Mengatur tampilan responsif di berbagai ukuran layar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Memuat file CSS Bootstrap lokal -->
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Judul tab browser dinamis sesuai mode Tambah atau Ubah -->
+  <title>DATA_JUDUL - CRUD MVC Akademik</title>
+</head>
+<body>
+  <!-- Bagian bilah navigasi utama di bagian atas halaman -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Brand aplikasi -->
+      <a class="navbar-brand" href="index.php">CRUD MVC Akademik</a>
+      <!-- Daftar menu navigasi -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Menu Dosen -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Dosen</a>
+          </li>
+          <!-- Menu Prodi -->
+          <li class="nav-item">
+            <a class="nav-link" href="prodi.php">Prodi</a>
+          </li>
+          <!-- Menu Mata Kuliah aktif -->
+          <li class="nav-item">
+            <a class="nav-link active" href="matkul.php">Matkul</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Kontainer kolom di tengah layar untuk membungkus kartu form -->
+  <div class="col-lg-6 m-auto my-4">
+    <!-- Form HTML dengan metode POST dan tujuan URL dinamis (DATA_AKSI) -->
+    <form method="post" action="DATA_AKSI">
+      <!-- Komponen Card Bootstrap -->
+      <div class="card">
+        <!-- Header kartu berwarna biru dengan judul form dinamis -->
+        <div class="card-header bg-primary">
+          <h4 class="text-white text-center mb-0">DATA_JUDUL</h4>
+        </div>
+        <!-- Badan kartu yang berisi seluruh kolom input -->
+        <div class="card-body">
+          <!-- Grup input untuk Kode Mata Kuliah -->
+          <div class="mb-3">
+            <label class="form-label">Kode Matkul:</label>
+            <input type="text" name="kode_matkul" value="DATA_KODE_MATKUL" class="form-control" placeholder="Contoh: IK201" required>
+          </div>
+          <!-- Grup input untuk Nama Mata Kuliah -->
+          <div class="mb-3">
+            <label class="form-label">Nama Matkul:</label>
+            <input type="text" name="nama_matkul" value="DATA_NAMA_MATKUL" class="form-control" placeholder="Contoh: Desain dan Pemrograman Berbasis Objek" required>
+          </div>
+          <!-- Grup input angka untuk bobot SKS -->
+          <div class="mb-3">
+            <label class="form-label">SKS:</label>
+            <input type="number" name="sks" value="DATA_SKS" min="1" max="6" class="form-control" placeholder="Masukkan jumlah SKS (1-6)" required>
+          </div>
+          <!-- Grup pilihan dropdown untuk Dosen Pengampu (Foreign Key) -->
+          <div class="mb-3">
+            <label class="form-label">Dosen Pengampu:</label>
+            <select name="dosen_id" class="form-select" required>
+              <!-- Opsi bawaan sebelum pengguna memilih dosen -->
+              <option value="" disabled selected>-- Pilih Dosen Pengampu --</option>
+              <!-- Placeholder untuk daftar opsi dosen dari database -->
+              DATA_DOSEN
+            </select>
+          </div>
+          <!-- Tombol submit untuk menyimpan data (teks tombol dinamis: Simpan / Ubah) -->
+          <button class="btn btn-success" type="submit" name="submit">DATA_TOMBOL</button>
+          <!-- Tombol batal untuk kembali ke halaman utama daftar mata kuliah -->
+          <a class="btn btn-secondary" href="matkul.php">Batal</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Memuat bundle JavaScript Bootstrap lokal -->
+  <script src="assets/bootstrap.bundle.min.js"></script>
+</body>
+</html>

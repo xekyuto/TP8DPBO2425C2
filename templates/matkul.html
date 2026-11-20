@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- Menentukan bahasa dokumen HTML adalah Bahasa Indonesia -->
+<html lang="id">
+<head>
+  <!-- Mengatur encoding karakter halaman menjadi UTF-8 -->
+  <meta charset="utf-8">
+  <!-- Mengatur tampilan agar responsif di layar desktop maupun perangkat mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Memuat file CSS Bootstrap lokal dari folder assets -->
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <!-- Menentukan judul tab browser -->
+  <title>Daftar Mata Kuliah - CRUD MVC Akademik</title>
+</head>
+<body>
+  <!-- Bagian bilah navigasi utama di bagian atas halaman -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Pembungkus isi navbar dengan lebar penuh -->
+    <div class="container-fluid">
+      <!-- Judul aplikasi yang mengarah ke halaman utama -->
+      <a class="navbar-brand" href="index.php">CRUD MVC Akademik</a>
+      <!-- Daftar menu navigasi antartabel -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Menu navigasi untuk halaman Dosen -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Dosen</a>
+          </li>
+          <!-- Menu navigasi untuk halaman Prodi -->
+          <li class="nav-item">
+            <a class="nav-link" href="prodi.php">Prodi</a>
+          </li>
+          <!-- Menu navigasi untuk halaman Mata Kuliah (status aktif) -->
+          <li class="nav-item">
+            <a class="nav-link active" href="matkul.php">Matkul</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Kontainer utama konten halaman dengan jarak vertikal -->
+  <div class="container my-4">
+    <!-- Baris judul halaman di kiri dan tombol tambah data di kanan -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <!-- Judul bagian tabel -->
+      <h3>Daftar Mata Kuliah</h3>
+      <!-- Tombol untuk membuka form tambah mata kuliah baru -->
+      <a class="btn btn-primary" href="matkul.php?aksi=tambah">Tambah Matkul Baru</a>
+    </div>
+
+    <!-- Tabel Bootstrap dengan garis tepi dan warna baris selang-seling -->
+    <table class="table table-bordered table-striped align-middle">
+      <!-- Kepala tabel dengan latar belakang gelap -->
+      <thead class="table-dark">
+        <tr>
+          <!-- Kolom ID mata kuliah -->
+          <th>ID</th>
+          <!-- Kolom Kode Mata Kuliah -->
+          <th>Kode Matkul</th>
+          <!-- Kolom Nama Mata Kuliah -->
+          <th>Nama Matkul</th>
+          <!-- Kolom Jumlah SKS -->
+          <th>SKS</th>
+          <!-- Kolom Nama Dosen Pengampu hasil relasi JOIN -->
+          <th>Dosen Pengampu</th>
+          <!-- Kolom Tindakan (tombol Ubah dan Hapus) -->
+          <th>Tindakan</th>
+        </tr>
+      </thead>
+      <!-- Badan tabel tempat baris data dinamis disuntikkan oleh MatkulView -->
+      <tbody>
+        DATA_TABEL
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Memuat bundle JavaScript Bootstrap lokal -->
+  <script src="assets/bootstrap.bundle.min.js"></script>
+</body>
+</html>
